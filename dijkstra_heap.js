@@ -72,7 +72,6 @@ function dijkstra(그래프, 시작정점) {
 	힙.insert({ 정점: 시작정점, 거리: 거리[시작정점] });
 
 	while (힙.heap.length > 0) {
-		console.log('힙에서 현제 확정지은 거리의 수 : ' + (지역이름.length - 힙.heap.length));
 		const 현재 = 힙.extractMin();
 
 		const 현재정점 = 현재.정점;
@@ -94,7 +93,7 @@ function dijkstra(그래프, 시작정점) {
 				}
 			}
 		}
-
+		console.log('힙에서 현제 거리 파악을 위해 힙에 객체 형식으로 push 한 수 : ' + 힙.heap.length);
 		console.log('-------------------');
 		console.log('거리: ', 거리);
 		지역이름.forEach((지역, 인덱스) => console.log(`${지역}: ${거리[인덱스]}`));
